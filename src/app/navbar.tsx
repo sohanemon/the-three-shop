@@ -7,7 +7,8 @@ export default function Navbar() {
   return (
     <AnimatePresence>
       <motion.div {...slideAnimation('down')}>
-        <div className='text-3xl flex items-center justify-center mt-3'>
+        <div className='text-3xl flex items-center justify-center mt-3 gap-2'>
+          {/* nav parent */}
           <motion.div {...slideAnimation('left')}>
             <Image src='/threejs.png' alt='Icon' width={50} height={50} />
           </motion.div>
