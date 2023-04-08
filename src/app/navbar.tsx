@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Navbar() {
   return (
     <AnimatePresence>
-      <motion.div {...slideAnimation('down')}>
+      <motion.div key={'navbar'} {...slideAnimation('down')}>
         <div className='text-3xl flex items-center justify-center mt-3 gap-2'>
           {/* nav parent */}
           <motion.div {...slideAnimation('left')}>

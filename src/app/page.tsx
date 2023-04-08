@@ -1,10 +1,9 @@
 'use client';
-import { Inter } from 'next/font/google';
-import Hero from './hero';
-import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
+import { Inter } from 'next/font/google';
+import { useSelector } from 'react-redux';
 import Editor from './editor';
-import { AnimatePresence, motion } from 'framer-motion';
+import Hero from './hero';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,7 +12,8 @@ export default function Home() {
 
   return (
     <main className='px-4'>
-      <AnimatePresence>{firstPage ? <Hero /> : <Editor />}</AnimatePresence>
+      <Hero />
+      <Editor />
     </main>
   );
 }
