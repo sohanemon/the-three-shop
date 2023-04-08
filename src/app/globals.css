@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  body::-webkit-scrollbar {
+    display: none;
+  }
   body {
     @apply bg-base text-primary;
+    scrollbar-width: 0;
   }
 }
