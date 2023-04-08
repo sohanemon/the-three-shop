@@ -8,10 +8,27 @@ export default function Editor() {
 
   return (
     <AnimatePresence>
-      <motion.section {...slideAnimation('right')}>
-        {!firstPage &&
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam repellat      incidunt debitis perferendis porro velit dignissimos saepe quos et veniam,      tempore deleniti praesentium error vel similique odio illum molestiae      quam.'}
-      </motion.section>
+      {!firstPage && (
+        <motion.section
+          key={'editor'}
+          initial={{ x: 700, opacity: 0 }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            transition: {
+              delay: 0.75,
+              duration: 0.5,
+              type: 'spring',
+              damping: 14,
+            },
+          }}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+          repellat incidunt debitis perferendis porro velit dignissimos saepe
+          quos et veniam, tempore deleniti praesentium error vel similique odio
+          illum molestiae quam.
+        </motion.section>
+      )}
     </AnimatePresence>
   );
 }
