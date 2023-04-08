@@ -1,9 +1,13 @@
 'use client';
 import Button from '@/components/button';
 import { slideAnimation } from '@/lib/motion';
+import { toggleIntro } from '@/slices/intro-slice';
+import { RootState } from '@/store';
 import { motion } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Hero() {
+  const dispatch = useDispatch();
   return (
     <motion.section className='hero' {...slideAnimation('left')}>
       <h1 className='text-7xl font-bold'>
@@ -16,7 +20,7 @@ export default function Hero() {
         awesome tool.
       </p>
       <br />
-      <Button onClick={() => console.log('ok')} type='fill'>
+      <Button onClick={() => dispatch(toggleIntro())} type='fill'>
         Get Started
       </Button>
     </motion.section>

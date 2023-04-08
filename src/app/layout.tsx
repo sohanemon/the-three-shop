@@ -1,3 +1,4 @@
+import ReduxProvider from '@/context/redux-provider';
 import './globals.css';
 import Navbar from './navbar';
 
@@ -14,9 +15,13 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <Navbar />
-        <br />
-        {children}
+        <ReduxProvider>
+          <>
+            <Navbar />
+            <br />
+            {children}
+          </>
+        </ReduxProvider>
       </body>
     </html>
   );
