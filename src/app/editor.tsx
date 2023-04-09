@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { slideAnimation } from '@/lib/motion';
 import LeftSideTab from '@/components/left-side-tab';
 import BottomTab from '@/components/bottom-tab';
-import Shirt from '@/components/shirt';
 export default function Editor() {
   const firstPage = useSelector((state: RootState) => state.intro.firstPage);
 
@@ -24,7 +23,6 @@ export default function Editor() {
           }}
         >
           <LeftSideTab />
-          <Shirt />
           <BottomTab />
         </motion.section>
       )}
