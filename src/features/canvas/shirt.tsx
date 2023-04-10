@@ -18,7 +18,12 @@ export default function Shirt() {
       material={materials.lambert1}
       geometry={nodes.T_Shirt_male.geometry}
     >
-      <Decal map={reactTexture} scale={[0.08, 0.08, 1]} dispose={null!} />
+      <Decal
+        map={reactTexture}
+        position={[0.05, 0.05, 0.1]}
+        scale={[0.07, 0.07, 1]}
+        dispose={null!}
+      />
     </mesh>
   );
 }
