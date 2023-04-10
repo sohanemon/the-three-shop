@@ -9,7 +9,7 @@ export default function Camera({ children }: { children: React.ReactNode }) {
     easing.damp3(state.camera.position, [0, 0, 5], 0.25, delta);
     easing.dampE(
       groupRef?.current?.rotation!,
-      [-state.pointer.y / 5, -state.pointer.x / 5, 0],
+      [-state.pointer.y / 7, -state.pointer.x / 5, 0],
       0.25,
       delta
     );
