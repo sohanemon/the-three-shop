@@ -7,16 +7,17 @@ import Camera from './camera';
 
 export default function Canvas() {
   return (
-    <FiberCanvas>
+    <FiberCanvas style={{ height: '400px' }}>
       <ambientLight>
-        <Environment>
-          {/* <Camera> */}
+        <Camera>
           {/* <Backdrop /> */}
+          {/* @ts-ignore */}
           <Center>
-            <Shirt />
+            <mesh scale={[10, 10, 10]}>
+              <Shirt />
+            </mesh>
           </Center>
-          {/* </Camera> */}
-        </Environment>
+        </Camera>
       </ambientLight>
     </FiberCanvas>
   );
