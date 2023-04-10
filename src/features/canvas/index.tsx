@@ -1,5 +1,5 @@
 import { Canvas as FiberCanvas } from '@react-three/fiber';
-import { Environment, Center } from '@react-three/drei';
+import { Environment, Center, PerspectiveCamera } from '@react-three/drei';
 
 import Backdrop from './backdrop';
 import Shirt from './shirt';
@@ -13,9 +13,7 @@ export default function Canvas() {
           {/* <Backdrop /> */}
           {/* @ts-ignore */}
           <Center>
-            <mesh scale={[10, 10, 10]}>
-              <Shirt />
-            </mesh>
+            <Shirt />
           </Center>
         </Camera>
       </ambientLight>
