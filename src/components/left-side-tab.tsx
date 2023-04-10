@@ -1,8 +1,19 @@
 import { EditorTabs } from '@/utils/constants';
 import { AnimatePresence, motion } from 'framer-motion';
 import Tab from './tab';
+import ColorPicker from './colorpicker';
+import FilePicker from './filepicker';
+import AiPicker from './aipicker';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import { useEffect } from 'react';
 
 export default function LeftSideTab() {
+  const currentTab = useSelector((state: RootState) => state.editor.currentTab);
+  useEffect(() => {
+    // generateTab(currentTab);
+  }, [currentTab]);
+
   return (
     <>
       <motion.section
@@ -14,7 +25,26 @@ export default function LeftSideTab() {
         {EditorTabs?.map((tab) => (
           <Tab key={tab.name} {...tab} />
         ))}
+        {currentTab && (
+          <div className='rounded-xl absolute top-0 ml-3 left-full w-full h-full bg-primary/10'>
+            {generateTab(currentTab)}
+          </div>
+        )}
+        {/* <FilePicker /> */}
       </motion.section>
     </>
   );
+}
+
+function generateTab(currentTab: string) {
+  switch (currentTab) {
+    case 'colorpicker':
+      return <ColorPicker />;
+    case 'filepicker':
+      return <FilePicker />;
+    case 'aipicker':
+      return <AiPicker />;
+    default:
+      null;
+  }
 }

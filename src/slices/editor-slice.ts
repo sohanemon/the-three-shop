@@ -9,12 +9,16 @@ const editorSlice = createSlice({
   name: 'editor',
   initialState,
   reducers: {
-    setColor(state, action) {
-      console.log('🛑 ~ setColor ~ action:', action);
+    setColor(state, { payload }) {
+      state.color = payload;
+      console.log('🛑 ~ setColor ~ action:', payload);
+    },
+    setCurrentTab(state, { payload }) {
+      state.currentTab = payload;
     },
   },
 });
 
-export const { setColor } = editorSlice.actions;
+export const { setColor, setCurrentTab } = editorSlice.actions;
 
 export default editorSlice.reducer;

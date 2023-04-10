@@ -9,9 +9,10 @@ export default function Shirt() {
   const { nodes, materials } = useGLTF('/shirt.glb');
   const reactTexture = useTexture('/react.png');
   const shirtRef = useRef<Mesh>(null);
-  useFrame((state, delta) => {
-    easing.dampC(materials.lambert1.color, '#f00', 0.25, delta);
-  });
+  // #todo
+  // useFrame((state, delta) => {
+  //   easing.dampC(materials.lambert1.color, '#f00', 0.25, delta);
+  // });
   return (
     <mesh
       ref={shirtRef}
