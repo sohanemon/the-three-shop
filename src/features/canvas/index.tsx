@@ -14,7 +14,7 @@ export default function Canvas() {
     >
       <ambientLight>
         <Camera>
-          {/* <Backdrop /> */}
+          <Backdrop />
           {/* @ts-ignore */}
           <Center>
             <Shirt />
