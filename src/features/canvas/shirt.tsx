@@ -8,18 +8,14 @@ export default function Shirt() {
   const { nodes, materials } = useGLTF('/shirt.glb');
   const reactTexture = useTexture('/react.png');
   const shirtRef = useRef<Mesh>(null);
-  useFrame((state, delta) => {
-    // shirt.scene.traverse((child) => {
-    //   // @ts-ignore
-    //   if (child.material) {
-    //     // @ts-ignore
-    //     child.material.color.setHex(0xff0000);
-    //   }
-    // });
-  });
+  useFrame((state, delta) => {});
   return (
-    <mesh material={materials.lambert1} geometry={nodes.T_Shirt_male.geometry}>
-      {/* <primitive object={shirt}></primitive> */}
+    <mesh
+      ref={shirtRef}
+      material={materials.lambert1}
+      geometry={nodes.T_Shirt_male.geometry}
+    >
+      <Decal map={reactTexture} scale={[0.08, 0.08, 1]} dispose={null!} />
     </mesh>
   );
 }
