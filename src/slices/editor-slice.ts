@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   currentTab: '',
-  color: '#aaa',
+  color: '#125978',
   textureImg: '/react.png',
   centerLogo: false,
   sideLogo: true,
