@@ -16,7 +16,7 @@ export default function Navbar() {
         key={'navbar'}
         {...slideAnimation('down')}
       >
-        <div className='text-3xl flex items-center justify-center mt-3 gap-2'>
+        <div className='cursor-pointer text-3xl flex items-center justify-center mt-3 gap-2'>
           {/* nav parent */}
           <motion.div {...slideAnimation('left')}>
             <Image src='/threejs.png' alt='Icon' width={50} height={50} />
