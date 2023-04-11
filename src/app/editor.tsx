@@ -1,11 +1,9 @@
-import { RootState } from '@/store';
-import { AnimatePresence } from 'framer-motion';
-import { useSelector } from 'react-redux';
-import { motion } from 'framer-motion';
-import { slideAnimation } from '@/lib/motion';
-import LeftSideTab from '@/components/left-side-tab';
 import BottomTab from '@/components/bottom-tab';
+import LeftSideTab from '@/components/left-side-tab';
 import Canvas from '@/features/canvas';
+import { RootState } from '@/store';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
 export default function Editor() {
   const firstPage = useSelector((state: RootState) => state.intro.firstPage);
 
@@ -24,7 +22,7 @@ export default function Editor() {
           }}
         >
           <LeftSideTab />
-          {/* <Canvas /> */}
+          <Canvas />
           <BottomTab />
         </motion.section>
       )}
