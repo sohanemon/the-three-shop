@@ -14,7 +14,7 @@ export default function Canvas() {
       camera={{ position: [0, 0, 0] }}
       style={{
         height: '400px',
-        width: '400px',
+        width: 'min-content',
         margin: '0 auto',
         zIndex: tab && -1,
       }}
