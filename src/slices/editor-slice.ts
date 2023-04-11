@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   currentTab: '',
   color: '#aaa',
-  textureImg: null,
+  textureImg: '/react.png',
 };
 
 const editorSlice = createSlice({
@@ -16,6 +16,7 @@ const editorSlice = createSlice({
     },
     setCurrentTab(state, { payload }) {
       state.currentTab = payload;
+      console.log('🛑 ~ setCurrentTab ~ payload:', payload);
     },
     setTextureImg(state, { payload }) {
       state.textureImg = payload;

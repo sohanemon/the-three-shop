@@ -9,6 +9,12 @@ export default function FilePicker() {
   const [image, setImage] = useState<ImageListType>();
   const dispatch = useDispatch();
 
+  function handleTexture() {
+    // @ts-ignore
+    dispatch(setTextureImg(image[0].data_url));
+    dispatch(setCurrentTab(''));
+  }
+
   return (
     <div className='App'>
       <ReactImageUploading
@@ -40,13 +46,7 @@ export default function FilePicker() {
                       Update
                     </Button>
                     {/* @ts-ignore */}
-                    <Button
-                      onClick={() => {
-                        dispatch(setTextureImg(imageList[0].dataURL));
-                        dispatch(setCurrentTab(''));
-                      }}
-                      type='fill'
-                    >
+                    <Button onClick={handleTexture} type='fill'>
                       Done
                     </Button>
                   </div>
