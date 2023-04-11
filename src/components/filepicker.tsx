@@ -1,11 +1,13 @@
 import Image from 'next/image';
-import { MouseEvent, MouseEventHandler, useState } from 'react';
+import { useState } from 'react';
 import ReactImageUploading, { ImageListType } from 'react-images-uploading';
 import Button from './button';
+import { useDispatch } from 'react-redux';
+import { setCurrentTab, setTextureImg } from '@/slices/editor-slice';
 
 export default function FilePicker() {
   const [image, setImage] = useState<ImageListType>();
-  console.log('🛑 ~ FilePicker ~ image:', image);
+  const dispatch = useDispatch();
 
   return (
     <div className='App'>
@@ -38,7 +40,13 @@ export default function FilePicker() {
                       Update
                     </Button>
                     {/* @ts-ignore */}
-                    <Button onClick={() => {}} type='fill'>
+                    <Button
+                      onClick={() => {
+                        dispatch(setTextureImg(imageList[0].dataURL));
+                        dispatch(setCurrentTab(''));
+                      }}
+                      type='fill'
+                    >
                       Done
                     </Button>
                   </div>
