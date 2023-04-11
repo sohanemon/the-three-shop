@@ -1,18 +1,15 @@
-import { setColor } from '@/slices/editor-slice';
+import { color, setColor } from '@/slices/editor-slice';
 import { RootState } from '@/store';
 import { SketchPicker } from 'react-color';
+import { HexColorPicker } from 'react-colorful';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function ColorPicker() {
   const dispatch = useDispatch();
-  const color = useSelector((state: RootState) => state.editor.color);
+  const c = useSelector(color);
   return (
     <>
-      <SketchPicker
-        color={color}
-        disableAlpha
-        onChange={(color) => dispatch(setColor(color.hex))}
-      />
+      <HexColorPicker color={c} onChange={(c) => dispatch(setColor(c))} />
     </>
   );
 }

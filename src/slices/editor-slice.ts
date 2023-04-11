@@ -1,3 +1,4 @@
+import { RootState } from '@/store';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -11,7 +12,6 @@ const editorSlice = createSlice({
   reducers: {
     setColor(state, { payload }) {
       state.color = payload;
-      console.log('🛑 ~ setColor ~ action:', payload);
     },
     setCurrentTab(state, { payload }) {
       state.currentTab = payload;
@@ -20,5 +20,9 @@ const editorSlice = createSlice({
 });
 
 export const { setColor, setCurrentTab } = editorSlice.actions;
+
+/* -------------------------- selectors export ------------------------- */
+export const color = (state: RootState) => state.editor.color;
+export const currentTab = (state: RootState) => state.editor.currentTab;
 
 export default editorSlice.reducer;
