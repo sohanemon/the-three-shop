@@ -17,11 +17,11 @@ export const EditorTabs = [
 
 export const FilterTabs = [
   {
-    name: 'logoShirt',
+    name: 'centerLogo',
     icon: logoShirt,
   },
   {
-    name: 'stylishShirt',
+    name: 'sideLogo',
     icon: stylishShirt,
   },
 ];

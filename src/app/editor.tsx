@@ -24,7 +24,7 @@ export default function Editor() {
           }}
         >
           <LeftSideTab />
-          <Canvas />
+          {/* <Canvas /> */}
           <BottomTab />
         </motion.section>
       )}

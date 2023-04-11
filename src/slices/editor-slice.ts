@@ -5,6 +5,8 @@ const initialState = {
   currentTab: '',
   color: '#aaa',
   textureImg: '/react.png',
+  centerLogo: false,
+  sideLogo: true,
 };
 
 const editorSlice = createSlice({
@@ -21,14 +23,38 @@ const editorSlice = createSlice({
     setTextureImg(state, { payload }) {
       state.textureImg = payload;
     },
+    toggleCenterLogo(state) {
+      if (state.centerLogo) {
+        state.centerLogo = false;
+      } else if (!state.centerLogo) {
+        state.centerLogo = true;
+        state.sideLogo = false;
+      }
+    },
+    toggleSideLogo(state) {
+      if (state.sideLogo) {
+        state.sideLogo = false;
+      } else if (!state.sideLogo) {
+        state.sideLogo = true;
+        state.centerLogo = false;
+      }
+    },
   },
 });
 
-export const { setColor, setCurrentTab, setTextureImg } = editorSlice.actions;
+export const {
+  setColor,
+  setCurrentTab,
+  setTextureImg,
+  toggleCenterLogo,
+  toggleSideLogo,
+} = editorSlice.actions;
 
 /* -------------------------- selectors export ------------------------- */
 export const color = (state: RootState) => state.editor.color;
 export const currentTab = (state: RootState) => state.editor.currentTab;
 export const textureImg = (state: RootState) => state.editor.textureImg;
-
+export const selectLogo = (state: RootState) => {
+  return { center: state.editor.centerLogo, side: state.editor.sideLogo };
+};
 export default editorSlice.reducer;

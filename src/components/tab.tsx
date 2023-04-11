@@ -13,7 +13,10 @@ export default function Tab({
 }) {
   const dispatch = useDispatch();
   return (
-    <div onClick={() => dispatch(setCurrentTab(name))}>
+    <div
+      onClick={() => dispatch(setCurrentTab(name))}
+      className={filter ? 'bg-primary/20 rounded-full p-2' : ''}
+    >
       <Image src={icon} alt='picker' width={30} />
     </div>
   );
