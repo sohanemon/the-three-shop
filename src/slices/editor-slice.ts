@@ -18,7 +18,6 @@ const editorSlice = createSlice({
     },
     setCurrentTab(state, { payload }) {
       state.currentTab = payload;
-      console.log('🛑 ~ setCurrentTab ~ payload:', payload);
     },
     setTextureImg(state, { payload }) {
       state.textureImg = payload;
@@ -55,6 +54,9 @@ export const color = (state: RootState) => state.editor.color;
 export const currentTab = (state: RootState) => state.editor.currentTab;
 export const textureImg = (state: RootState) => state.editor.textureImg;
 export const selectLogo = (state: RootState) => {
-  return { center: state.editor.centerLogo, side: state.editor.sideLogo };
+  return {
+    sideLogo: state.editor.sideLogo,
+    centerLogo: state.editor.centerLogo,
+  };
 };
 export default editorSlice.reducer;
