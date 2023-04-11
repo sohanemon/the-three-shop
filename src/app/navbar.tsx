@@ -18,8 +18,8 @@ export default function Navbar() {
       >
         <div className='cursor-pointer text-3xl flex items-center justify-center mt-3 gap-2'>
           {/* nav parent */}
-          <motion.div {...slideAnimation('left')}>
-            <Image src='/threejs.png' alt='Icon' width={50} height={50} />
+          <motion.div {...slideAnimation('left')} className='pt-2'>
+            <Image src='/shirt.png' alt='Icon' width={50} height={50} />
           </motion.div>
           <motion.h1 {...slideAnimation('right')}>
             The{' '}

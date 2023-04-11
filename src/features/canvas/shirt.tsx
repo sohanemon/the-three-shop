@@ -2,7 +2,7 @@ import { color, selectLogo, textureImg } from '@/slices/editor-slice';
 import { Decal, useGLTF, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { easing } from 'maath';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { ColorRepresentation, Mesh } from 'three';
 
@@ -24,6 +24,15 @@ export default function Shirt() {
       delta
     );
   });
+
+  // useEffect(() => {
+  //   easing.dampC(
+  //     materials.lambert1.color,
+  //     c as ColorRepresentation,
+  //     0.25,
+  //     0.01
+  //   );
+  // }, [c, materials.lambert1.color]);
 
   return (
     <mesh
