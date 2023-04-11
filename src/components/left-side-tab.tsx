@@ -31,7 +31,6 @@ export default function LeftSideTab() {
             {generateTab(currentTab)}
           </div>
         )}
-        {/* <FilePicker /> */}
       </motion.section>
     </>
   );
