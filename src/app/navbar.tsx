@@ -1,12 +1,14 @@
 'use client';
 import { slideAnimation } from '@/lib/motion';
+import { color } from '@/slices/editor-slice';
 import { toggleIntro } from '@/slices/intro-slice';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Navbar() {
   const dispatch = useDispatch();
+  const c = useSelector(color);
   return (
     <AnimatePresence>
       <motion.div
@@ -19,7 +21,16 @@ export default function Navbar() {
           <motion.div {...slideAnimation('left')}>
             <Image src='/threejs.png' alt='Icon' width={50} height={50} />
           </motion.div>
-          <motion.h1 {...slideAnimation('right')}>The Three Shop</motion.h1>
+          <motion.h1 {...slideAnimation('right')}>
+            The{' '}
+            <span
+              className='font-extrabold text-5xl inline-block rotate-12 '
+              style={{ color: c }}
+            >
+              3
+            </span>{' '}
+            Shop
+          </motion.h1>
         </div>
       </motion.div>
       ;

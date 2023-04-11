@@ -1,18 +1,26 @@
+import { color } from '@/slices/editor-slice';
 import { Decal, useGLTF, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { easing } from 'maath';
 import { useRef } from 'react';
-import { Mesh } from 'three';
+import { useSelector } from 'react-redux';
+import { ColorRepresentation, Mesh } from 'three';
 
 export default function Shirt() {
+  const c = useSelector(color);
   // @ts-ignore
   const { nodes, materials } = useGLTF('/shirt.glb');
   const reactTexture = useTexture('/react.png');
   const shirtRef = useRef<Mesh>(null);
-  // #todo
-  // useFrame((state, delta) => {
-  //   easing.dampC(materials.lambert1.color, '#f00', 0.25, delta);
-  // });
+  // #todo color changer
+  useFrame((state, delta) => {
+    easing.dampC(
+      materials.lambert1.color,
+      c as ColorRepresentation,
+      0.25,
+      delta
+    );
+  });
   return (
     <mesh
       ref={shirtRef}
