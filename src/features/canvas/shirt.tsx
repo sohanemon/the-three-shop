@@ -15,7 +15,7 @@ export default function Shirt() {
   const { nodes, materials } = useGLTF('/shirt.glb');
   const reactTexture = useTexture(t);
   const shirtRef = useRef<Mesh>(null);
-  // #todo color changer
+
   useFrame((state, delta) => {
     easing.dampC(
       materials.lambert1.color,

@@ -22,7 +22,8 @@ export default function Editor() {
           }}
         >
           <LeftSideTab />
-          <Canvas />
+          {/* #todo Canvas commented */}
+          {/* <Canvas /> */}
           <BottomTab />
         </motion.section>
       )}
