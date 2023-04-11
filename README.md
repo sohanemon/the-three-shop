@@ -32,3 +32,38 @@ export default function LeftSideTab() {
   );
 }
 ```
+
+## Next 13 / NextJS / API Routes
+
+### GET
+
+```ts
+export async function GET() {
+  return new Response('Hi man');
+}
+```
+
+### POST
+
+```ts
+export async function POST(req: Request) {
+  return Response.json({ msg: 'Alhamdulillah' });
+}
+```
+
+Or for type safety use
+
+```ts
+export async function POST(req: Request) {
+  return NextResponse.json({ msg: 'Alhamdulillah' });
+}
+```
+
+Handling body
+
+```ts
+export async function POST(req: Request) {
+  const res = await req.json();
+  return NextResponse.json(res);
+}
+```
