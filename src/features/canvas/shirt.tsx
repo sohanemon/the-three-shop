@@ -1,4 +1,4 @@
-import { color } from '@/slices/editor-slice';
+import { color, textureImg } from '@/slices/editor-slice';
 import { Decal, useGLTF, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { easing } from 'maath';
@@ -8,9 +8,12 @@ import { ColorRepresentation, Mesh } from 'three';
 
 export default function Shirt() {
   const c = useSelector(color);
+  const t = useSelector(textureImg);
+  console.log('🛑 ~ Shirt ~ t:', t);
+
   // @ts-ignore
   const { nodes, materials } = useGLTF('/shirt.glb');
-  const reactTexture = useTexture('/react.png');
+  const reactTexture = useTexture(t);
   const shirtRef = useRef<Mesh>(null);
   // #todo color changer
   useFrame((state, delta) => {
