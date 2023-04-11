@@ -27,7 +27,7 @@ export default function LeftSideTab() {
           <Tab key={tab.name} {...tab} />
         ))}
         {currentTab && (
-          <div className='rounded-xl absolute top-0 ml-3 left-full w-full h-full bg-primary/10'>
+          <div className='rounded-xl absolute top-0 ml-3 left-full w-max p-8 h-max bg-primary/10'>
             {generateTab(currentTab)}
           </div>
         )}

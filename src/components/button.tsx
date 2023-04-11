@@ -22,7 +22,7 @@ export default function Button({
 
   return (
     <motion.button
-      style={{ backgroundColor: c }}
+      style={{ backgroundColor: type === 'fill' ? c : '' }}
       onClick={onClick}
       className={`transition-all duration-300 px-4 py-2 rounded-md shadow-lg active:bg-secondary/70 ${applyVariant(
         type
