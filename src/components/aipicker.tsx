@@ -1,16 +1,23 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from './button';
-import { color } from '@/slices/editor-slice';
+import { color, setImageURL } from '@/slices/editor-slice';
 import { useRef } from 'react';
 
 export default function AiPicker() {
   const c = useSelector(color);
+  const dispatch = useDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
   async function handleSubmit() {
     const input = inputRef.current?.value;
-    fetch('/api/v1/image')
+    fetch('/api/v1/image', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        prompt: input,
+      }),
+    })
       .then((res) => res.json())
-      .then((url) => console.log(url));
+      .then((url) => dispatch(setImageURL(url)));
   }
   return (
     <div className='flex flex-col gap-y-2 '>
