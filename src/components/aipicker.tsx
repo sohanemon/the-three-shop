@@ -6,8 +6,11 @@ import { useRef } from 'react';
 export default function AiPicker() {
   const c = useSelector(color);
   const inputRef = useRef<HTMLInputElement>(null);
-  function handleSubmit() {
-    console.log(inputRef.current?.value);
+  async function handleSubmit() {
+    const input = inputRef.current?.value;
+    fetch('/api/v1/image')
+      .then((res) => res.json())
+      .then((url) => console.log(url));
   }
   return (
     <div className='flex flex-col gap-y-2 '>
