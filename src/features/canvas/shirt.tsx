@@ -1,4 +1,9 @@
-import { color, selectLogo, textureImg } from '@/slices/editor-slice';
+import {
+  color,
+  selectImageURL,
+  selectLogo,
+  textureImg,
+} from '@/slices/editor-slice';
 import { Decal, useGLTF, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { easing } from 'maath';
@@ -9,6 +14,7 @@ import { ColorRepresentation, Mesh } from 'three';
 export default function Shirt() {
   const c = useSelector(color);
   const t = useSelector(textureImg);
+  const imageURL = useSelector(selectImageURL);
   const logo = useSelector(selectLogo);
 
   // @ts-ignore
@@ -48,6 +54,7 @@ export default function Shirt() {
           dispose={null!}
         />
       )}
+      {}
     </mesh>
   );
 }

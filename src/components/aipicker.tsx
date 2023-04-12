@@ -17,7 +17,7 @@ export default function AiPicker() {
       }),
     })
       .then((res) => res.json())
-      .then((url) => dispatch(setImageURL(url)));
+      .then((url) => dispatch(setImageURL(url.url)));
   }
   return (
     <div className='flex flex-col gap-y-2 '>
