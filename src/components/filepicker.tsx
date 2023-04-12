@@ -26,11 +26,7 @@ export default function FilePicker() {
         {({ imageList, onImageUpload, onImageUpdate, onImageRemove }) => (
           <div className='flex flex-col items-center'>
             {!imageList[0] && (
-              <Button
-                customStyle='text-sm'
-                onClick={onImageUpload}
-                type='outline'
-              >
+              <Button customStyle='text-sm' onClick={onImageUpload} type='fill'>
                 Upload
               </Button>
             )}

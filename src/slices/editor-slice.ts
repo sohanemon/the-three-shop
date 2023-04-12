@@ -7,6 +7,7 @@ const initialState = {
   textureImg: '/madrid.png',
   centerLogo: false,
   sideLogo: true,
+  imageURL: '',
 };
 
 const editorSlice = createSlice({
@@ -38,6 +39,9 @@ const editorSlice = createSlice({
         state.centerLogo = false;
       }
     },
+    setImageURL(state, { payload }) {
+      state.imageURL = payload;
+    },
   },
 });
 
@@ -47,6 +51,7 @@ export const {
   setTextureImg,
   toggleCenterLogo,
   toggleSideLogo,
+  setImageURL,
 } = editorSlice.actions;
 
 /* -------------------------- selectors export ------------------------- */
@@ -59,4 +64,5 @@ export const selectLogo = (state: RootState) => {
     centerLogo: state.editor.centerLogo,
   };
 };
+export const selectImageURL = (state: RootState) => state.editor.imageURL;
 export default editorSlice.reducer;
