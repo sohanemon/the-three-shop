@@ -6,7 +6,11 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  const data = await req.json();
-  const url = await fetchImageWithPrompt(data.prompt);
-  return NextResponse.json({ url });
+  try {
+    const data = await req.json();
+    const url = await fetchImageWithPrompt(data.prompt);
+    return NextResponse.json({ url });
+  } catch (e) {
+    console.log(e);
+  }
 }

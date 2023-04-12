@@ -3,7 +3,8 @@ import ai from '@/lib/openai';
 export async function fetchImageWithPrompt(prompt: string) {
   try {
     const result = await ai.createImage({
-      prompt,
+      prompt:
+        'create a awesome, modern and beautiful texture of' + ' ' + prompt,
       n: 1,
       size: '1024x1024',
     });
