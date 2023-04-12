@@ -1,3 +1,4 @@
+import { fetchImageWithPrompt } from '@/utils/generate-image';
 import { NextResponse } from 'next/server';
 
 export async function GET(req: Request) {
@@ -5,5 +6,7 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  return NextResponse.json({ msg: await req.json() });
+  const data = await req.json();
+  const url = await fetchImageWithPrompt(data.prompt);
+  return NextResponse.json({ url });
 }
