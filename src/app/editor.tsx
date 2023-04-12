@@ -23,7 +23,7 @@ export default function Editor() {
         >
           <LeftSideTab />
           {/* #todo Canvas commented */}
-          {/* <Canvas /> */}
+          <Canvas />
           <BottomTab />
         </motion.section>
       )}
