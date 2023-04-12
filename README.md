@@ -63,6 +63,7 @@ Handling body
 
 ```ts
 export async function POST(req: Request) {
+  // await is must
   const res = await req.json();
   return NextResponse.json(res);
 }
