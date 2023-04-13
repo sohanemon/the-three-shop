@@ -17,17 +17,18 @@ export default function Hero() {
       {firstPage && (
         <motion.section
           key={'intro'}
-          className='hero'
+          className='hero max-w-2xl mx-auto'
           {...slideAnimation('left')}
         >
-          <h1 className='text-7xl font-bold'>
-            Lets <span style={{ color: c }}>make</span>
-          </h1>
           <p className='text-xl'>
-            Your awesome t-shirt for <span className=''>free</span> right now{' '}
-            <br className='md:hidden' /> and{' '}
-            <strong className='capitalize'>unleash you imagination</strong> with
-            our awesome tool.
+            Welcome to our t-shirt website! We&apos;re thrilled that
+            <br className='hidden md:block' /> you&apos;ve decided to join us on
+            our journey to <br />
+            <p className='text-7xl font-bold capitalize'>
+              create <span style={{ color: c }}>unique</span>
+            </p>
+            and <strong style={{ color: c }}> stylish t-shirts</strong> that
+            help you <strong>express</strong> your individuality.
           </p>
           <br />
           <Button onClick={() => dispatch(toggleIntro())} type='fill'>
