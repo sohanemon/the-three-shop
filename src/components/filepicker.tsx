@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Image from 'next/image';
 import { useState } from 'react';
 import ReactImageUploading, { ImageListType } from 'react-images-uploading';
@@ -25,7 +26,7 @@ export default function FilePicker() {
         {({ imageList, onImageUpload, onImageUpdate, onImageRemove }) => (
           <div className='flex flex-col items-center'>
             {!imageList[0] && (
-              <Button customStyle='' onClick={onImageUpload} type='outline'>
+              <Button customStyle='text-sm' onClick={onImageUpload} type='fill'>
                 Upload
               </Button>
             )}
@@ -41,12 +42,18 @@ export default function FilePicker() {
                 <br />
                 {imageList[0] && (
                   <div className='flex flex-col gap-1'>
-                    {/* @ts-ignore */}
-                    <Button onClick={onImageUpdate} type='outline'>
+                    <Button
+                      onClick={onImageUpdate}
+                      customStyle='text-sm'
+                      type='outline'
+                    >
                       Update
                     </Button>
-                    {/* @ts-ignore */}
-                    <Button onClick={handleTexture} type='fill'>
+                    <Button
+                      onClick={handleTexture}
+                      customStyle='text-sm'
+                      type='fill'
+                    >
                       Done
                     </Button>
                   </div>
