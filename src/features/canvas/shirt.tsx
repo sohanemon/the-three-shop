@@ -4,12 +4,12 @@ import {
   selectLogo,
   textureImg,
 } from '@/slices/editor-slice';
-import { Decal, useGLTF, useTexture } from '@react-three/drei';
+import { Decal, useGLTF } from '@react-three/drei';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { easing } from 'maath';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { ColorRepresentation, ImageLoader, Mesh, TextureLoader } from 'three';
+import { ColorRepresentation, Mesh, TextureLoader } from 'three';
 
 export default function Shirt() {
   const c = useSelector(color);
@@ -21,10 +21,9 @@ export default function Shirt() {
   const { nodes, materials } = useGLTF('/shirt.glb');
   // #todo useTexture(imageURL || t);
   // const reactTexture = useTexture(imageURL || t);
-  // const logoTexture = useTexture(
-  //   'https://oaidalleapiprodscus.blob.core.windows.net/private/org-5cINL02TgAA4fFJ9RkD7RYWb/user-cm88UeUgSwRdyl60PyfRUv8k/img-fMp1iC9kys3a3HxrV7HrzH9G.png?st=2023-04-12T09%3A16%3A33Z&se=2023-04-12T11%3A16%3A33Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-12T00%3A18%3A45Z&ske=2023-04-13T00%3A18%3A45Z&sks=b&skv=2021-08-06&sig=ZhnXo2hMTTaei1uy%2BVraLBa2ELKZ45Ha69SzSDtyISQ%3D'
-  // );
-  const logoTexture = useLoader(TextureLoader, imageURL || t);
+  // const logoTexture = useTexture('https://shorturl.at/bmqKY');
+  // console.log(imageURL, 'imageurl');
+  const logoTexture = useLoader(TextureLoader, t);
 
   const shirtRef = useRef<Mesh>(null);
 
