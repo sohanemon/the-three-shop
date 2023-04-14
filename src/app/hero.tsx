@@ -24,9 +24,9 @@ export default function Hero() {
             Welcome to our t-shirt website! We&apos;re thrilled that
             <br className='hidden md:block' /> you&apos;ve decided to join us on
             our journey to <br />
-            <p className='text-7xl font-bold capitalize'>
+            <span className='text-7xl font-bold capitalize'>
               create <span style={{ color: c }}>unique</span>
-            </p>
+            </span>
             and <strong style={{ color: c }}> stylish t-shirts</strong> that
             help you <strong>express</strong> your individuality.
           </p>
